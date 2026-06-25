@@ -1,101 +1,449 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SCSE@GU</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-        }
-        header {
-            background: #007BFF;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-        }
-        nav {
-            margin: 20px 0;
-        }
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #007BFF;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        .content {
-            background: white;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        footer {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 0.8em;
-            color: #555;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SCSE Resource Portal | Galgotias University</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+:root{
+    --primary:#a41515;
+    --secondary:#c62828;
+    --dark:#222;
+    --light:#f6f8fb;
+    --card:#ffffff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:var(--light);
+    color:#333;
+}
+
+.container{
+    width:95%;
+    max-width:1400px;
+    margin:auto;
+}
+
+/* HEADER */
+
+header{
+    background:white;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+.top-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    padding:15px 25px;
+}
+
+.logo-area{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.logo-area img{
+    height:80px;
+}
+
+.title-area h1{
+    color:var(--primary);
+    font-size:30px;
+}
+
+.title-area p{
+    color:#666;
+}
+
+/* NAVIGATION */
+
+nav{
+    background:var(--primary);
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+nav li{
+    margin:0;
+}
+
+nav a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    padding:16px 22px;
+    transition:.3s;
+}
+
+nav a:hover{
+    background:#7d1111;
+}
+
+/* HERO */
+
+.hero img{
+    width:100%;
+    display:block;
+}
+
+/* SEARCH */
+
+.search-section{
+    padding:25px;
+    text-align:center;
+}
+
+.search-box{
+    width:100%;
+    max-width:700px;
+    padding:15px;
+    border-radius:10px;
+    border:1px solid #ccc;
+    font-size:16px;
+}
+
+/* QUICK LINKS */
+
+.section-title{
+    text-align:center;
+    color:var(--primary);
+    margin:20px 0;
+    font-size:32px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:20px;
+    padding:20px;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card i{
+    font-size:40px;
+    color:var(--primary);
+    margin-bottom:15px;
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.card a{
+    display:inline-block;
+    margin-top:15px;
+    text-decoration:none;
+    color:white;
+    background:var(--primary);
+    padding:10px 18px;
+    border-radius:6px;
+}
+
+/* STATS */
+
+.stats{
+    background:white;
+    padding:30px;
+    margin:30px 0;
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+}
+
+.stat{
+    text-align:center;
+}
+
+.stat h2{
+    color:var(--primary);
+}
+
+/* ANNOUNCEMENT */
+
+.announcement{
+    background:#fff4d6;
+    border-left:5px solid orange;
+    padding:20px;
+    margin:20px;
+    border-radius:10px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#1f2937;
+    color:white;
+    margin-top:50px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+    padding:40px;
+}
+
+.footer-grid h3{
+    margin-bottom:15px;
+    color:#ffd54f;
+}
+
+.footer-grid a{
+    color:#ddd;
+    text-decoration:none;
+}
+
+.bottom-footer{
+    text-align:center;
+    padding:15px;
+    background:#111827;
+}
+
+@media(max-width:768px){
+
+.top-header{
+    text-align:center;
+    justify-content:center;
+}
+
+.logo-area{
+    flex-direction:column;
+}
+
+.title-area h1{
+    font-size:24px;
+}
+
+}
+
+</style>
 </head>
+
 <body>
 
 <header>
-    <h1>School of Computer Science and Engineering (SCSE) @ Galgotias University</h1>
-    <h3>Welcome to the Web Portal for SCSE Related Links and Information</h3>
-</header>
 
-<nav>
-    <a href="http://gu.icloudems.com/corecampus/index.php">iCloud</a>
-    <a href="https://gulms.galgotiasuniversity.org/my/">LMS</a>
-	<a href="https://docs.google.com/spreadsheets/d/1HmJnryWkkZe_LVP-OgPaRzliN1tJ554XYSHh--X78oE/edit?pli=1#gid=1694576964">Faculty List</a>
-    <a href="https://drive.google.com/drive/u/0/folders/16ozPAR1bOfKf3E1eCCyKncd_229AteCo">SMO Drive</a>
-	<a href="https://lms.galgotiasuniversity.org/my/">OLD LMS</a>
-    <a href="http://guqbms.inpods.com/login">QBMS</a>
-	<a href="https://alumni.galgotiasuniversity.edu.in/user/login.dz">GU Alumni</a>
-    <a href="https://galgotiasuniversity.refread.com/#/home">GU eLibrary</a>
-	<a href="https://forms.gle/6ZKfSZ2aAHuVLoFbA">Apply Gate Pass</a>
-	<a href="https://docs.google.com/spreadsheets/d/1GMzEMPyA6VCyKCRTujGrWY4YzsBTXII3BfB9DThxncE/edit?usp=sharing">Gate Pass Data</a>
-	<a href="file:///F:/GU/SCSE%20Webpage/Organogram.svg">SCSE Organogram</a>
-</nav>
+<div class="top-header">
 
-<div class="content";> <!--style="background: url('file:///F:/GU/SCSE%20Webpage/GU_image1_bg.jpg');
-			 background-repeat: no-repeat; background-size: 70% 70%;"-->
-    <h2 style="color:navy;">Web-links Overview</h2>
-    <p style="color:black;"> All SCSE links to various locations and resources at one place. <b style="color:blue;">Kindly note you may need login credentials for each of web-links separately</b></p>
-	<p style="color:black;">This is a brief overview of the web links utilized by SCSE members.</p>
-    
-    <h3 id="location1" style="color:navy;">iCloud</h3>
-    <p style="color:black;"> Attendance, Time-table, Leaves, Session Plans and Various Reports. <a style="color:black;" href="http://gu.icloudems.com/corecampus/index.php">Utilized for many other academic purposes too.</a></p>
-    
-    <h3 id="location2" style="color:navy;">LMS</h3>
-    <p style="color:black;">Learning Management System for all  the courses taught at SCSE. <a style="color:black;"href="https://gulms.galgotiasuniversity.org/my/">Visit New LMS</a></p>
-    
-	<h3 id="location3" style="color:navy;">Faculty List</h3>
-    <p style="color:black;">Contact Details of all SCSE Faculty Members <a style="color:black;" href="https://docs.google.com/spreadsheets/d/1HmJnryWkkZe_LVP-OgPaRzliN1tJ554XYSHh--X78oE/edit?pli=1#gid=1694576964">View Faculty List</a></p>
-	
-	<h3 id="location4" style="color:navy;">SMO Drive</h3>
-    <p style="color:black;">Drive containing all docuemnts required for SCSE Management <a style="color:black;" href="https://drive.google.com/drive/u/0/folders/16ozPAR1bOfKf3E1eCCyKncd_229AteCo">View SMO</a></p>
-    
-	<h3 id="location5" style="color:navy;">OLD LMS</h3>
-    <p style="color:black;">Older version of LMS containing previous academic content. <a style="color:black;" href="https://lms.galgotiasuniversity.org/my/">Visit Older LMS</a></p>
-    
-    <h3 id="location6" style="color:navy;">QBMS</h3>
-    <p style="color:black;">Question Bank Management System for GU. <a style="color:black;" href="http://guqbms.inpods.com/login">Visit QBMS</a></p>
-	
-	<h3 id="location7" style="color:navy;">GU Alumni Portal</h3>
-    <p style="color:black;">Web portal for all GU Alumnis. <a style="color:black;" href="https://alumni.galgotiasuniversity.edu.in/user/login.dz">Visit Alumni Portal</a></p>
-    
-    <h3 id="location8" style="color:navy;">GU eLibrary</h3>
-    <p style="color:black;">eLibrary for GU members. <a style="color:black;" href="https://galgotiasuniversity.refread.com/#/home">Visit eLibrary</a></p>
+<div class="logo-area">
+<img src="logo.png" alt="Galgotias University Logo">
+
+<div class="title-area">
+<h1>School of Computer Science & Engineering</h1>
+<p>Galgotias University</p>
 </div>
 
-<footer>
-    <p><b style="color:blue;">Developed by: Prof. (Dr.) Abdul Aleem &copy; 2024 SCSE @ Galgotias University | All Rights Reserved</b></p>
+</div>
+
+</div>
+
+<nav>
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#resources">Resources</a></li>
+<li><a href="#stats">Statistics</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+</header>
+
+<section class="hero">
+<img src="dcse-banner.png" alt="SCSE Vision Mission">
+</section>
+
+<section class="search-section">
+<input type="text" class="search-box"
+placeholder="Search resources...">
+</section>
+
+<h2 class="section-title" id="resources">
+Quick Access Resources
+</h2>
+
+<div class="cards">
+
+<div class="card">
+<i class="fas fa-cloud"></i>
+<h3>iCloud</h3>
+<a href="http://gu.icloudems.com/corecampus/index.php" target="_blank">
+Open
+</a>
+</div>
+
+<div class="card">
+<i class="fas fa-graduation-cap"></i>
+<h3>New LMS</h3>
+<a href="https://gulms.galgotiasuniversity.org/my/" target="_blank">
+Open
+</a>
+</div>
+
+<div class="card">
+<i class="fas fa-book-open"></i>
+<h3>Old LMS</h3>
+<a href="https://lms.galgotiasuniversity.org/my/" target="_blank">
+Open
+</a>
+</div>
+
+<div class="card">
+<i class="fas fa-database"></i>
+<h3>QBMS</h3>
+<a href="http://guqbms.inpods.com/login" target="_blank">
+Open
+</a>
+</div>
+
+<div class="card">
+<i class="fas fa-users"></i>
+<h3>Faculty List</h3>
+<a href="https://docs.google.com/spreadsheets/d/1HmJnryWkkZe_LVP-OgPaRzliN1tJ554XYSHh--X78oE/edit" target="_blank">
+Open
+</a>
+</div>
+
+<div class="card">
+<i class="fas fa-folder-open"></i>
+<h3>SMO Drive</h3>
+<a href="https://drive.google.com/drive/u/0/folders/16ozPAR1bOfKf3E1eCCyKncd_229AteCo" target="_blank">
+Open
+</a>
+</div>
+
+<div class="card">
+<i class="fas fa-user-graduate"></i>
+<h3>Alumni Portal</h3>
+<a href="https://alumni.galgotiasuniversity.edu.in/user/login.dz" target="_blank">
+Open
+</a>
+</div>
+
+<div class="card">
+<i class="fas fa-book"></i>
+<h3>eLibrary</h3>
+<a href="https://galgotiasuniversity.refread.com/#/home" target="_blank">
+Open
+</a>
+</div>
+
+<div class="card">
+<i class="fas fa-id-card"></i>
+<h3>Apply Gate Pass</h3>
+<a href="https://forms.gle/6ZKfSZ2aAHuVLoFbA" target="_blank">
+Open
+</a>
+</div>
+
+<div class="card">
+<i class="fas fa-table"></i>
+<h3>Gate Pass Data</h3>
+<a href="https://docs.google.com/spreadsheets/d/1GMzEMPyA6VCyKCRTujGrWY4YzsBTXII3BfB9DThxncE/edit" target="_blank">
+Open
+</a>
+</div>
+
+</div>
+
+<section class="stats" id="stats">
+<div class="stats-grid">
+
+<div class="stat">
+<h2>150+</h2>
+<p>Faculty Members</p>
+</div>
+
+<div class="stat">
+<h2>5000+</h2>
+<p>Students</p>
+</div>
+
+<div class="stat">
+<h2>25+</h2>
+<p>Programs</p>
+</div>
+
+<div class="stat">
+<h2>100+</h2>
+<p>Research Publications</p>
+</div>
+
+</div>
+</section>
+
+<div class="announcement">
+<strong>Latest Announcement:</strong>
+Welcome to the new SCSE Resource Portal.
+</div>
+
+<footer id="contact">
+
+<div class="footer-grid">
+
+<div>
+<h3>About SCSE</h3>
+<p>
+School of Computer Science & Engineering,
+Galgotias University.
+</p>
+</div>
+
+<div>
+<h3>Important Links</h3>
+<p><a href="https://galgotiasuniversity.edu.in/">University Website</a></p>
+</div>
+
+<div>
+<h3>Contact</h3>
+<p>Greater Noida, Uttar Pradesh</p>
+<p>dcse@galgotiasuniversity.edu.in</p>
+</div>
+
+</div>
+
+<div class="bottom-footer">
+© 2026 SCSE @ Galgotias University
+</div>
+
 </footer>
 
 </body>
